@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ChildrenController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,5 +28,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/children',[ChildrenController::class,'index'])->name('children.index');
+Route::get('/children/create',[ChildrenController::class,'create'])->name('children.create');
+Route::get('/children',[ChildrenController::class,'index'])->name('children.index');
+Route::get('/children',[ChildrenController::class,'index'])->name('children.index');
 
 require __DIR__.'/auth.php';
